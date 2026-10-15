@@ -224,6 +224,132 @@ def panel(pid, label, pre, papers, intro_h, intro_p, facts, method, res, books, 
 '''
 
 
+ESSAY_CSS = """
+/* 論考タブ（2026-10-16 追加）: 長文を読ませる版面。値は :root のトークンを参照する */
+.lit-essay { max-width: var(--measure); }
+.lit-essay h2 { font-size: 22px; font-weight: 900; letter-spacing: -.01em; margin: var(--space-5) 0 var(--space-2); padding-top: var(--space-3); border-top: 1px solid var(--es-rule); }
+.lit-essay h3 { font-size: 17px; font-weight: 700; margin: var(--space-4) 0 var(--space-1); }
+.lit-essay p { margin: 0 0 1em; line-height: 2; text-indent: 1em; }
+.lit-essay .lit-essay-ref p { text-indent: -2em; padding-left: 2em; font-size: 13px; line-height: 1.7; }
+.lit-essay hr { border: 0; border-top: 1px solid var(--es-rule); margin: var(--space-3) 0; }
+.lit-essay em { font-style: normal; }
+.lit-reftable { width: 100%; border-collapse: collapse; margin: var(--space-2) 0 var(--space-4); font-size: 14px; }
+.lit-reftable th { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--es-ink-mute); text-align: left; padding: 4px 10px 8px; border-bottom: 2px solid var(--es-ink); }
+.lit-reftable td { padding: 10px; border-bottom: 1px solid var(--es-rule-light); vertical-align: top; line-height: 1.7; }
+.lit-reftable td.c { font-family: var(--font-mono); text-align: right; white-space: nowrap; }
+.lit-reftable td b { display: block; }
+.lit-reftable td small { color: var(--es-ink-mute); }
+@media (max-width: 640px) { .lit-reftable, .lit-reftable tbody, .lit-reftable tr, .lit-reftable td { display: block; width: 100%; } .lit-reftable thead { display: none; } .lit-reftable td.c { text-align: left; } }
+"""
+
+
+def essay_panel():
+    import markdown
+    md = (ROOT / "content" / "treatise.md").read_text(encoding="utf-8")
+    # drop the title line; the panel has its own heading
+    md = re.sub(r"^# .*\n", "", md, count=1)
+    body = markdown.markdown(md, extensions=["extra"])
+    i = body.find("<h2>参考文献</h2>")
+    if i > 0:
+        j = body.find("<h3>", i)
+        refs = body[i:j] if j > 0 else body[i:]
+        body = body[:i] + '<div class="lit-essay-ref">' + refs + "</div>" + (body[j:] if j > 0 else "")
+    return f'''<div class="lit-panel" id="tab-essay" role="tabpanel" aria-labelledby="tabbtn-tab-essay">
+<main class="page">
+<section class="section" id="c-intro">
+  <div class="sec-head">
+    <div class="eyebrow"><span class="n">03</span>Essay · Draft</div>
+    <h2>うしろ側にある未来 ―― 「投射」による未来の人類学の試み</h2>
+    <p class="lead">01・02 の文献を土台に、未来学の批判的な検討と「投射」という概念の提案を論文の形にまとめた草稿である。本文は約2万1千字。草稿は主張の射程と文献の帰属について別系統のモデルによる点検を受け、指摘に沿って修正した。第二研究のフィールドワークとインタビューは未実施で、本文では今後の調査の設計として記している。</p>
+  </div>
+  <article class="lit-essay">
+{body}
+  </article>
+</section>
+</main>
+</div>
+'''
+
+
+REF_GROUPS = [
+ ("未来の人類学", [("Núñez & Sweetser 2006", "With the future behind them（Cognitive Science）", "論文", "序論：アイマラ語の話者が未来を背後に置く例"),
+                ("Pels 2015", "Modern times: Seven steps toward an anthropology of the future（Current Anthropology）", "論文", "序論：未来の人類学への道筋"),
+                ("Appadurai 2004", "The capacity to aspire", "書籍の章", "序論：未来を思い描く能力は文化的に形づくられる"),
+                ("Appadurai 2013", "The Future as Cultural Fact", "書籍", "序論：未来は文化的な事実である"),
+                ("Bryant & Knight 2019", "The Anthropology of the Future", "書籍", "序論：未来への6つの向き"),
+                ("宮崎広和 2004", "The Method of Hope", "書籍", "2.1：フィジーの知識の実践と希望の方法"),
+                ("Fabian 1983", "Time and the Other", "書籍", "2.1・4.2：同時代性の否認"),
+                ("Textor 1980", "A Handbook on Ethnographic Futures Research", "書籍", "2.1：民族誌的未来研究"),
+                ("Salazar ほか 2017", "Anthropologies and Futures", "書籍（論集）", "2.1：人類学と未来研究を結ぶ論集")]),
+ ("未来学", [("Polak 1961", "The Image of the Future", "書籍", "2.2：未来像の研究"),
+          ("Bell 1997", "Foundations of Futures Studies", "書籍", "2.2：起こりうる・起こりそうな・望ましい未来"),
+          ("Voros 2003", "A generic foresight process framework（Foresight）", "論文", "2.2：未来の円錐"),
+          ("Ansoff 1975", "Managing strategic surprise by response to weak signals（California Management Review）", "論文", "2.2：弱いシグナル"),
+          ("Hiltunen 2008", "The future sign and its three dimensions（Futures）", "論文", "2.2：未来の兆しの3つの次元"),
+          ("Inayatullah 1998", "Causal layered analysis: Poststructuralism as method（Futures）", "論文", "2.2・6.2：因果階層分析"),
+          ("Sardar 1993", "Colonizing the future（Futures）", "論文", "2.3：未来学の脱植民地化"),
+          ("Wack 1985", "Scenarios: Uncharted waters ahead（Harvard Business Review）", "論文", "7.3：シナリオと経営者の判断")]),
+ ("時間論とアクターネットワーク理論", [("Serres & Latour 1995", "Conversations on Science, Culture, and Time", "書籍", "3.1：折り畳まれ浸透する時間"),
+          ("Latour 1993", "We Have Never Been Modern", "書籍", "3.2：近代の時間の批判"),
+          ("Latour 2005", "Reassembling the Social", "書籍", "3.2・3.3：アクターネットワーク理論")]),
+ ("歴史学と未来", [("Rostow 1960", "The Stages of Economic Growth", "書籍", "4.1：段階的発展論"),
+          ("Chakrabarty 2000", "Provincializing Europe", "書籍", "4.2：歴史の待合室"),
+          ("Popper 1957", "The Poverty of Historicism", "書籍", "4.2：歴史主義批判"),
+          ("Koselleck 1985", "Futures Past", "書籍", "4.2：経験の空間と期待の地平"),
+          ("Hartog 2003", "Régimes d'historicité", "書籍", "4.2：現在主義"),
+          ("Guldi & Armitage 2014", "The History Manifesto", "書籍", "4.2：歴史学が未来へ向かう動き"),
+          ("Turchin 2008", "Arise 'cliodynamics'（Nature）", "論文", "4.2：歴史の動態の数理モデル"),
+          ("Jaspers 1949", "Vom Ursprung und Ziel der Geschichte", "書籍", "6.3：枢軸時代")]),
+ ("投射と類比・判断", [("Neustadt & May 1986", "Thinking in Time", "書籍", "5.3：歴史の類比の使い方と誤用"),
+          ("Green & Armstrong 2007", "Structured analogies for forecasting（International Journal of Forecasting）", "論文", "2.1：構造化類比"),
+          ("Klein 1998", "Sources of Power", "書籍", "7.3：認識主導型意思決定（ミクロな投射の対抗仮説）")]),
+ ("ウェイファインディング", [("Finney 1994", "Voyage of Rediscovery", "書籍", "7.1：ホクレアの航海の復興"),
+          ("Finney 2003", "Sailing in the Wake of the Ancestors", "書籍", "7.1：航海の復興の記録"),
+          ("Gladwin 1970", "East Is a Big Bird", "書籍", "7.2：プルワット環礁の航海者の推論"),
+          ("Lewis 1972", "We, the Navigators", "書籍", "7.2：太平洋の伝統的航海術の記録"),
+          ("Hutchins 1983", "Understanding Micronesian navigation", "書籍の章", "7.2・7.4：エタックの体系"),
+          ("Hutchins 1995", "Cognition in the Wild", "書籍", "7.2：分散した認知としての航海"),
+          ("Genz ほか 2009", "Wave navigation in the Marshall Islands（Oceanography）", "論文", "7.2：波による航海術の検証"),
+          ("Ingold 2000", "The Perception of the Environment", "書籍", "7.2：ナビゲーションとウェイファインディング"),
+          ("Spiller, Barclay-Kerr & Panoho 2015", "Wayfinding Leadership", "書籍", "7.5：ウェイファインディングとリーダーシップ")]),
+]
+
+
+def refs_panel():
+    import json
+    cites = json.loads((ROOT / "content" / "refcites.json").read_text(encoding="utf-8"))
+    def find(title):
+        t = re.sub(r"（.*?）", "", title).strip().lower()[:20]
+        for c in cites:
+            if c["title"].lower().startswith(t) or t.startswith(c["title"].lower()[:20]):
+                return c["cites"]
+        return None
+    blocks = []
+    total = 0
+    for g, rows in REF_GROUPS:
+        trs = []
+        for au, ti, kind, use in rows:
+            total += 1
+            c = find(ti)
+            cs = f"{c:,}" if c is not None else "—"
+            trs.append(f'<tr><td><b>{html.escape(au)}</b><small>{html.escape(ti)}</small></td><td>{kind}</td><td>{use}</td><td class="c">{cs}</td></tr>')
+        blocks.append(f'<div class="subhead">{g}（{len(rows)}件）</div>\n<table class="lit-reftable"><thead><tr><th>著者・年</th><th>種別</th><th>論考での使い方（節）</th><th>被引用</th></tr></thead><tbody>\n' + "\n".join(trs) + "\n</tbody></table>")
+    return f'''<div class="lit-panel" id="tab-refs" role="tabpanel" aria-labelledby="tabbtn-tab-refs">
+<main class="page">
+<section class="section" id="d-refs">
+  <div class="sec-head">
+    <div class="eyebrow"><span class="n">04</span>References added in the essay</div>
+    <h2>論考で新たに用いた文献 {total}件</h2>
+    <p class="lead">03 の論考で、01・02 の一覧に加えて用いた論文と書籍である。論考のどの節で何のために使ったかを添えた。01・02 に掲載済みの文献（Robbins、Adams ほか、Munn、Guyer、Ortner、Crapanzano、宮崎 2006、Whyte 2017・2018）は再掲していない。</p>
+  </div>
+  <div class="note ink">被引用数は OpenAlex・{DATE} 時点の値。題名と著者で照合できなかったもの（Pels 2015、Appadurai 2004、Inayatullah 1998、Polak 1961、Hartog 2003、Textor 1980、Salazar ほか 2017、Spiller ほか 2015）は「—」とした。「—」は被引用が少ないことを意味しない。書籍と論文の被引用数は数え方の性質が異なるため、並べて比べない。</div>
+{chr(10).join(blocks)}
+</section>
+</main>
+</div>
+'''
+
+
 def main():
     t = TEMPLATE.read_text(encoding="utf-8")
     head = t[t.index("<head>"):t.index("</head>") + len("</head>")]
@@ -258,8 +384,13 @@ def main():
     nav = '''<nav class="lit-tabs" aria-label="文献一覧の切り替え"><div class="lit-tabs-inner" role="tablist">
   <a class="lit-tab" role="tab" id="tabbtn-tab-future" href="#tab-future" aria-controls="tab-future"><span class="n">01</span>未来の人類学</a>
   <a class="lit-tab" role="tab" id="tabbtn-tab-leadership" href="#tab-leadership" aria-controls="tab-leadership"><span class="n">02</span>第二陣: 先住民の知恵 × 対話 × リーダーシップ</a>
+  <a class="lit-tab" role="tab" id="tabbtn-tab-essay" href="#tab-essay" aria-controls="tab-essay"><span class="n">03</span>論考: うしろ側にある未来</a>
+  <a class="lit-tab" role="tab" id="tabbtn-tab-refs" href="#tab-refs" aria-controls="tab-refs"><span class="n">04</span>論考で用いた文献</a>
 </div></nav>
 '''
+    pc = essay_panel()
+    pd = refs_panel()
+    head = head.replace("</style>", ESSAY_CSS + "</style>", 1)
     body = f'''<body>
 <a class="skip-link" href="#tab-future">本文へスキップ</a>
 <header class="cover lit-nophoto" role="banner">
@@ -270,13 +401,13 @@ def main():
       <h1 class="cover-title doc-title">未来の<br>人類学</h1>
       <div class="cover-sub">読むべき主要論文 ― 未来の人類学と、先住民の知恵・対話から深めるリーダーシップ</div>
       <div class="cover-rule"></div>
-      <div class="cover-meta">2026.10.16 ／ esse-sense.inc<br>タブ1: 未来の人類学 論文10本 ／ タブ2: リーダーシップ（第二陣）論文10本 ／ 被引用数は OpenAlex {DATE} 時点</div>
+      <div class="cover-meta">2026.10.16 ／ esse-sense.inc<br>タブ1: 未来の人類学 論文10本 ／ タブ2: リーダーシップ（第二陣）論文10本<br>タブ3: 論考「うしろ側にある未来」（草稿） ／ タブ4: 論考で用いた文献40件 ／ 被引用数は OpenAlex {DATE} 時点</div>
     </div>
     <div class="cover-foot"><span>esse-sense.inc</span><span>Public</span></div>
   </div>
 </header>
 <div class="topbar"><div class="topbar-inner"><img class="brand-logo" src="assets/esse-sense-logo.png" alt="esse-sense"><div class="doc">未来の人類学 ― 読むべき主要論文</div><div class="num">2026.10</div></div></div>
-{nav}{pa}{pb}
+{nav}{pa}{pb}{pc}{pd}
 <footer class="foot"><div>esse-sense.inc</div><div class="c">未来の人類学 ― 読むべき主要論文 ・ 2026.10</div><div class="mono">v1.0</div></footer>
 {script}
 </body>
