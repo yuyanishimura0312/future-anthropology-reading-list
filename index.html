@@ -285,6 +285,16 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 .lit-reftable td small { color: var(--es-ink-mute); }
 @media (max-width: 640px) { .lit-reftable, .lit-reftable tbody, .lit-reftable tr, .lit-reftable td { display: block; width: 100%; } .lit-reftable thead { display: none; } .lit-reftable td.c { text-align: left; } }
 </style>
+<style id="plan-tab-style">
+#tab-plan .plan-sub { font-size: var(--fs-lead); font-weight: 700; color: var(--ink-soft); margin: 8px 0 0; }
+#tab-plan p.lit-summary { text-indent: 1em; line-height: 1.95; }
+#tab-plan .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#tab-plan table.plan-tbl { max-width: var(--measure-wide); }
+#tab-plan table.plan-tbl td.nm { width: 8em; white-space: nowrap; vertical-align: top; }
+#tab-plan table.plan-tbl td { vertical-align: top; line-height: 1.7; }
+#tab-plan ul.pts b { color: var(--accent); }
+@media (max-width: 800px) { #tab-plan .facts { grid-template-columns: 1fr; } #tab-plan table.plan-tbl td.nm { width: auto; white-space: normal; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#tab-future">本文へスキップ</a>
@@ -789,7 +799,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <p>これらの研究は、未来を人々の希望・予期・想像として記述する点で大きな成果を挙げた。人類学が未来の理解に方法として関わる試みもある。テクスターは、人々に望ましい未来・起こりそうな未来を語ってもらう民族誌的未来研究（Ethnographic Futures Research）を提唱し（Textor 1980）、サラザールらは人類学と未来研究を結ぶ論集を編んだ（Salazar et al. 2017）。予測研究の側には、過去の類似事例を構造的に照合して予測に用いる「構造化類比」の手法もある（Green and Armstrong 2007）。しかし、本稿が調べた範囲では、歴史的事実との照合を方法の中核に置き、それを非西洋の時間の概念と結びつけた人類学的な未来研究は手薄である。本稿が補おうとするのはこの点である。</p>
 <h3>2.2 未来学 ―― 時間軸の未来と可能性の未来</h3>
 <p>未来学（未来研究、フォーサイト）は、20世紀半ば以降に独自の学術領域として形成された。ポラックは、社会が抱く未来のイメージがその社会の行く末を方向づけると論じ、未来像の研究を未来学の基礎に据えた（Polak 1961）。ベルは未来研究の目的を、起こりうる未来、起こりそうな未来、望ましい未来を区別して探究することにあると整理した（Bell 1997）。ヴォロスは、ハンコックとビゾルドの議論を継いで、可能な未来・もっともらしい未来・起こりそうな未来・望ましい未来を入れ子の円錐として描く「未来の円錐」を、フォーサイトの過程の枠組みに組み込んだ（Voros 2003）。</p>
-<p>ここで重要なのは、未来学が扱う未来が、時間軸上の一点としての未来だけではないことである。未来学は未来を複数形（futures）で語る。それは、まだ到来していない時刻としての未来ではなく、現在の中に潜在する複数の可能性としての未来である。この考え方を学派として打ち立てたのが、ハワイ大学マノア校の未来研究である。そこでは複数の代替的な未来が等しく研究の対象とされ、単一の未来をあらかじめ定まったものとはみなさない（Dator 2009）。この「可能性の未来」という考え方は、未来を前方の到達点とする直線的な時間観を、すでに内側から揺さぶっている。</p>
+<p>ここで重要なのは、未来学が扱う未来が、時間軸上の一点としての未来だけではないことである。未来学は未来を複数形（futures）で語る。それは、まだ到来していない時刻としての未来ではなく、現在の中に潜在する複数の可能性としての未来である。この考え方を学派として打ち立てたのが、ハワイ大学マノア校の未来研究である。そこでは複数の代替的な未来が等しく研究の対象とされ、単一の未来をあらかじめ定まったものとはみなさない（Dator 2019）。この「可能性の未来」という考え方は、未来を前方の到達点とする直線的な時間観を、すでに内側から揺さぶっている。</p>
 <p>未来学はまた、変化の兆しを捉える方法を発展させてきた。アンゾフは、戦略的な不意打ちに備えるために、まだはっきりしない微弱な兆候、すなわち「弱いシグナル」に応答する経営の必要を説いた（Ansoff 1975）。ヒルトゥネンは、未来の兆しを、現象そのもの、それが社会で語られる程度、それが受け手に解釈される意味の3つの次元から捉え直した（Hiltunen 2008）。現在起こりつつあることを「シグナル」として収集し、そこから未来を読むことは、今日のフォーサイトの基本的な手続きになっている。</p>
 <p>さらに、イナヤトゥッラーは、表層の出来事（リタニー）、社会的・構造的な原因、世界観、神話と隠喩という4つの層に問題を分け、深い層に潜む未来の兆しを読み取る因果階層分析（Causal Layered Analysis）を提案した（Inayatullah 1998）。因果階層分析は、未来を表層の傾向の延長としてではなく、人々の世界観や神話の水準で生まれつつある変化として捉える方法であり、近年の未来学の大きな潮流を形づくっている。ただし、未来学の方法論の集成（Glenn and Gordon 2009）が整理するように、この方法には、進行役の力量に結果が左右されることや、事柄をどの層に割り当てるかが主観に依存するという限界がある。また、その「神話と隠喩」の層が、西洋の文学批評の枠組みを他の文化に当てはめているのではないかという論争も続いている。</p>
 <h3>2.3 未来学の脱植民地化</h3>
@@ -913,7 +923,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <p>Chakrabarty, D. (2000) <em>Provincializing Europe: Postcolonial Thought and Historical Difference</em>. Princeton University Press.</p>
 <p>Crapanzano, V. (2003) Reflections on hope as a category of social and psychological analysis. <em>Cultural Anthropology</em> 18(1): 3–32.</p>
 <p>Cunliffe, A. L. and Eriksen, M. (2011) Relational leadership. <em>Human Relations</em> 64(11): 1425–1449.</p>
-<p>Dator, J. (2009) Alternative futures at the Manoa School. <em>Journal of Futures Studies</em> 14(2): 1–18.</p>
+<p>Dator, J. (2019) Alternative futures at the Manoa School. In <em>Jim Dator: A Noticer in Time</em>. Anticipation Science, Vol. 5. Springer, pp. 37–54. https://doi.org/10.1007/978-3-030-17387-6_5</p>
 <p>Eliade, M. (1949) <em>Le mythe de l'éternel retour</em>. Gallimard.</p>
 <p>Fabian, J. (1983) <em>Time and the Other: How Anthropology Makes Its Object</em>. Columbia University Press.</p>
 <p>Finney, B. (1994) <em>Voyage of Rediscovery: A Cultural Odyssey through Polynesia</em>. University of California Press.</p>
@@ -1010,7 +1020,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <tr><td><b>Ansoff 1975</b><small>Managing strategic surprise by response to weak signals（California Management Review）</small></td><td>論文</td><td>2.2：弱いシグナル</td><td class="c">1,212</td></tr>
 <tr><td><b>Hiltunen 2008</b><small>The future sign and its three dimensions（Futures）</small></td><td>論文</td><td>2.2：未来の兆しの3つの次元</td><td class="c">206</td></tr>
 <tr><td><b>Inayatullah 1998</b><small>Causal layered analysis: Poststructuralism as method（Futures）</small></td><td>論文</td><td>2.2・6.2：因果階層分析</td><td class="c">—</td></tr>
-<tr><td><b>Dator 2009</b><small>Alternative futures at the Manoa School（Journal of Futures Studies）</small></td><td>論文</td><td>2.2：複数の代替未来を対象とする学派</td><td class="c">166</td></tr>
+<tr><td><b>Dator 2019</b><small>Alternative futures at the Manoa School（Anticipation Science 所収）</small></td><td>書籍の章</td><td>2.2：複数の代替未来を対象とする学派</td><td class="c">166</td></tr>
 <tr><td><b>Glenn &amp; Gordon 2009</b><small>Futures Research Methodology</small></td><td>書籍（方法論集成）</td><td>2.2：因果階層分析の限界</td><td class="c">—</td></tr>
 <tr><td><b>Sardar 1993</b><small>Colonizing the future（Futures）</small></td><td>論文</td><td>2.3：未来学の脱植民地化</td><td class="c">123</td></tr>
 <tr><td><b>Wack 1985</b><small>Scenarios: Uncharted waters ahead（Harvard Business Review）</small></td><td>論文</td><td>7.3：シナリオと経営者の判断</td><td class="c">980</td></tr>

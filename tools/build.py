@@ -287,7 +287,7 @@ REF_GROUPS = [
           ("Ansoff 1975", "Managing strategic surprise by response to weak signals（California Management Review）", "論文", "2.2：弱いシグナル"),
           ("Hiltunen 2008", "The future sign and its three dimensions（Futures）", "論文", "2.2：未来の兆しの3つの次元"),
           ("Inayatullah 1998", "Causal layered analysis: Poststructuralism as method（Futures）", "論文", "2.2・6.2：因果階層分析"),
-          ("Dator 2009", "Alternative futures at the Manoa School（Journal of Futures Studies）", "論文", "2.2：複数の代替未来を対象とする学派"),
+          ("Dator 2019", "Alternative futures at the Manoa School（Anticipation Science 所収）", "書籍の章", "2.2：複数の代替未来を対象とする学派"),
           ("Glenn & Gordon 2009", "Futures Research Methodology", "書籍（方法論集成）", "2.2：因果階層分析の限界"),
           ("Sardar 1993", "Colonizing the future（Futures）", "論文", "2.3：未来学の脱植民地化"),
           ("Wack 1985", "Scenarios: Uncharted waters ahead（Harvard Business Review）", "論文", "7.3：シナリオと経営者の判断")]),
