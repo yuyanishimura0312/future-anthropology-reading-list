@@ -254,6 +254,9 @@ def essay_panel():
     _spec = importlib.util.spec_from_file_location("lit_embed", ROOT / "figures" / "embed.py")
     _embed = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_embed)
     body = _embed.inject(body)
+    # 表題と表の器（狭い画面で表が頁を押し広げないよう .tbl-wrap で包む）
+    body = re.sub(r"<p><strong>(表\d+)\u3000(.*?)</strong></p>", r'<p class="lit-tcap"><span class="num">\1</span><span class="head">\2</span></p>', body)
+    body = body.replace("<table>", '<div class="tbl-wrap"><table>').replace("</table>", "</table></div>")
     i = body.find("<h2>参考文献</h2>")
     if i > 0:
         j = body.find("<h3>", i)

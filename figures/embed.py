@@ -32,6 +32,7 @@ def _captions():
 def _svg_inline(name, meta):
     svg = (HERE / f"{name}.svg").read_text(encoding="utf-8").strip()
     svg = re.sub(r"^<\?xml[^>]*>\s*", "", svg)
+    svg = re.sub(r"<text\b[^>]*></text>\s*", "", svg)  # figc leaves an empty title <text>
     # accessible name: replace figc's id-only aria-label with the figure label, add <title>/<desc>
     title = _html.escape(f'{meta["label"]} {meta["head"]}')
     desc = _html.escape(meta.get("alt", ""))
