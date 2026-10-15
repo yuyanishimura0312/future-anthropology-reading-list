@@ -48,7 +48,7 @@ def figure_html(name):
     svg = _svg_inline(name, meta)
     shape = meta.get("shape", "wide")
     return (
-        f'<figure class="lit-fig lit-fig-svg lit-fig-{shape}" id="{name}" role="group" aria-labelledby="{name}-cap">\n'
+        f'<figure class="lit-fig lit-fig-svg lit-fig-{shape}" id="{name}" tabindex="0" role="group" aria-labelledby="{name}-cap">\n'
         f"{svg}\n"
         f'<figcaption id="{name}-cap"><span class="num">{meta["label"]}</span>'
         f'<span class="head">{meta["head"]}</span>{meta["caption"]}</figcaption>\n'

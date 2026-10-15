@@ -337,7 +337,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 
 /* 3周目（2026-10-16・design-quality-auditor 2周目の差し戻しを反映）。SVG ファイルは変えず、inline 側の表示だけを CSS で整える。 */
 /* 図2: 主役（象限名）を軸ラベルより強く。図1: 段の見出しは黒、赤は罫と矢印（figc 固定仕様）だけに留める */
-.lit-fig-wide svg text[fill="#6B6B6B"] { fill: #3A3A3A; font-weight: 700; font-size: 12.5px; }
+.lit-fig-wide svg text[fill="#6B6B6B"] { fill: #3A3A3A; font-weight: 700; }
 .lit-fig-wide svg text[fill="#3A3A3A"] { fill: #6B6B6B; font-size: 12px; }
 .lit-fig-narrow svg text[fill="#CC1400"] { fill: #1A1A1A; }
 
@@ -355,6 +355,15 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
   .lit-essay .lit-fig-wide > svg { width: 680px; max-width: none; margin-left: 0; }
   .lit-essay .lit-fig-narrow > svg { width: 360px; min-width: 360px; max-width: none; }
   .lit-essay .lit-fig figcaption { position: sticky; left: 0; max-width: calc(100vw - 2 * var(--side)); }
+}
+
+/* 4周目: 表の器（.tbl-wrap）に入った表へも罫組みを当てる（3周目で外れていた） */
+.lit-essay .tbl-wrap > table { width: 100%; border-collapse: collapse; font-size: var(--fs-caption); line-height: 1.6; font-family: var(--font-sans); }
+.lit-essay .tbl-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 640px) {
+  /* 図1は本文幅に合わせる（12%のために横スクロールさせない。字は約9.7px） */
+  .lit-essay .lit-fig-narrow { overflow-x: visible; }
+  .lit-essay .lit-fig-narrow > svg { width: 100%; min-width: 0; max-width: 360px; }
 }
 </style>
 <style id="plan-tab-style">
@@ -936,7 +945,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <p>第一に、現代社会のシグナル（1万1,127件）を収集し、因果階層分析を適用した。第二に、その結果を読み解き、AIをめぐる変化を5つの重なりとして整理した（7.2）。この整理は分析者の解釈を含む。第三に、5つの重なりのそれぞれと構造の上で対応する過去の革命を対応づけた（7.3）。5つの革命は、複数の候補を比較して選んだものではなく、5つの重なりを整理する段階で筆者が対応づけたものである。他にありうる候補は、本稿の執筆時に事後的に整理し、表3に示す（7.3）。第四に、5つの革命についての学術文献の要旨から、変化の前と後、その理由を一件ずつ書き起こし、遷移とした（7.4）。各遷移には、出典の逐語の引用と、その仕組みがAIには移せない理由（反類比）を付した。反類比は381件すべてに記した。第五に、記述が出典に支えられているかを、複数のモデルによる盲検で判定した。第六に、同じ仕組みで起きた遷移をまとめて束とした。第七に、束どうしの関係（強め合う、打ち消し合う、必要条件になる）を判定した。第八に、あらかじめ定めた規則に従って分岐の軸を選び、2軸4象限の分岐を組んだ（7.5）。</p>
 <p>各工程で用いた大規模言語モデルを表1に示す。</p>
 <p class="lit-tcap"><span class="num">表1</span><span class="head">第一研究の工程と、用いたモデル</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>工程</th>
@@ -988,7 +997,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <h2>7. 第一研究 ―― AI革命の5革命への投射</h2>
 <h3>7.1 研究の手続き</h3>
 <p>第一研究では、投射の概念を大規模な文献データに適用した。手続きの全体は 6.4 で述べ、その流れを図1に示す。以下、各段階の結果を順に述べる。</p>
-<figure class="lit-fig lit-fig-svg lit-fig-narrow" id="fig1-procedure" role="group" aria-labelledby="fig1-procedure-cap">
+<figure class="lit-fig lit-fig-svg lit-fig-narrow" id="fig1-procedure" tabindex="0" role="group" aria-labelledby="fig1-procedure-cap">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 880" font-family='Noto Sans JP, "Hiragino Sans", -apple-system, sans-serif' role="img" aria-labelledby="fig1-procedure-t fig1-procedure-d"><title id="fig1-procedure-t">図1 投射の手続きの流れ（第一研究）。</title><desc id="fig1-procedure-d">7段の縦の流れ図。シグナル収集（11,127件）、因果階層分析（4層）、AI革命の5つの重なり（労働の変容・計算と知能の分散・情報の生成・異なるものとの接触・根本的な問いの再来）、5革命の遷移の書き起こし（381件）、仕組みの束（71束）、束どうしの相互作用（451本）、2軸4象限の分岐、の順に矢印で結ばれている。</desc>
 <rect x="0" y="0" width="360" height="880" fill="#FFFFFF"/>
 <rect x="16" y="48" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
@@ -1061,7 +1070,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <h3>7.3 投射の対象とした5つの革命</h3>
 <p>AI革命を照らし返す過去の事例として、5つの重なりのそれぞれと構造の上で対応する5つの革命を選んだ。労働の変容には、肉体労働の機械化を進めた産業革命（1760〜1840年頃）を対応させた。計算と知能の分散には、それまで工場ごとに置かれていた動力源を、電力網として社会全体に張りめぐらせた電力革命（1880〜1930年頃）を対応させた。情報の生成のあり方の変化には、活版印刷によって情報の量と流通を質的に変えた印刷革命（1450〜1600年頃）を対応させた。異なるものとの接触には、地理と文明の境界を再編した大航海時代（1450〜1650年頃）を対応させた。そして根本的な問いの再来には、ヤスパースが紀元前1千年紀の中頃に各地で同時に哲学と宗教の基本的な問いが立ち上がった時代として描いた枢軸時代（紀元前800〜前200年頃）を対応させた（Jaspers 1949）。この対応を表2に示す。表2の「対応の強さ」は、データベースで過去の革命とAIとの重なりを判定した結果である。とくに大航海時代との対応は、文明の接触という語の重なりが比喩にとどまり、変化を生んだ機序（病原体・作物・家畜という生物の移動と免疫の不在）は共有していないと判定されている。投射が働く単位は、革命どうしの対応ではなく、遷移をまとめた仕組みの束である。</p>
 <p class="lit-tcap"><span class="num">表2</span><span class="head">AI革命の5つの重なりと、対応させた過去の革命</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>AI革命の重なり</th>
@@ -1111,7 +1120,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 </table></div>
 <p>ここで、事例の選び方を明示しておく。5つの革命は、人類史の革命の母集団から無作為に、あるいは網羅的に選んだ標本ではない。AI革命の5つの重なりのそれぞれに構造の上で対応するという理由で、本研究が選んだ事例集である。したがって、5つの革命のうち何件で同じ変化が起きたかを、AI革命でその変化が起こる確からしさの根拠として用いることはできない。また、7.2 で見たとおり、計算と知能の分散はシグナルの上で相対的に証拠が薄く、これを電力革命と同格に並べることは時代構造の類比であって、いま観測される変化の強度が等しいことを意味しない。5つの革命とAIとの重なりの強さは一様ではない。AIと重ねうる他の歴史的事例は選んでいない。選ばなかった主な候補を表3に示す。</p>
 <p class="lit-tcap"><span class="num">表3</span><span class="head">本稿の執筆時に事後的に整理した、他にありうる候補</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>候補</th>
@@ -1146,7 +1155,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <h3>7.4 before／after の収集と分類、解析</h3>
 <p>5つの革命それぞれについて、学術文献の記述から、変化の前と後、その理由を一件ずつ取り出し、「遷移」として記録した。文献は、OpenAlex と Crossref から約5万9千件（論文以外の著作を含む）を収集し、語句・年代・分野の条件で約1万2千件に絞り込んだ。ただし、主題の適合を個別に判定したのはそのうち270件にとどまる。遷移は、文献の要旨の記述から書き起こした。本文から引用した遷移はない。また、遷移が引く出典の一部は、この絞り込みの集合の外にある。得られた遷移は381件である。その内訳を表4に示す。</p>
 <p class="lit-tcap"><span class="num">表4</span><span class="head">革命別の遷移数</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>革命</th>
@@ -1193,7 +1202,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <p>なお、軸は規則によって選んだが、その規則が見る束どうしの関係は1系統のモデルの判定に基づいている。規則で選んだことは、軸が判定者から独立していることを意味しない。別の判定者が束を組み直したときにこの2軸が残るかは、まだ確かめていない。</p>
 <p>2つの軸となった束について、過去と現在とで同一とみなせる仕組みと、AIには移せない差異を、出典による支持の状態とともに表5に並べる。ここに挙げる遷移は束の組み方を示すための例であり、軸の選択そのものは、束どうしの関係と規則に基づく。</p>
 <p class="lit-tcap"><span class="num">表5</span><span class="head">分岐の軸となった2つの束の、仕組みの同一性と移せない差異</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>軸</th>
@@ -1230,7 +1239,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 </tbody>
 </table></div>
 <p>この2つの軸の強弱の組み合わせから、AI革命の先にある4つの分岐が描かれる（図2）。</p>
-<figure class="lit-fig lit-fig-svg lit-fig-wide" id="fig2-quadrant" role="group" aria-labelledby="fig2-quadrant-cap">
+<figure class="lit-fig lit-fig-svg lit-fig-wide" id="fig2-quadrant" tabindex="0" role="group" aria-labelledby="fig2-quadrant-cap">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 432" font-family='Noto Sans JP, "Hiragino Sans", -apple-system, sans-serif' role="img" aria-labelledby="fig2-quadrant-t fig2-quadrant-d"><title id="fig2-quadrant-t">図2 AI革命の先にある4つの分岐。</title><desc id="fig2-quadrant-d">2軸4象限の見取り図。横軸は統制外の手段が統制を崩す力（左が弱、右が強）、縦軸は由来の価値が残る力（下が弱、上が強）。右上は「由来の核と分散した手段が結び合う」、左上は「残った由来の価値が、許可の枠の内側に置かれる」、右下は「分散した手段が、価格による置き換えを速める」、左下は「一本化された手段が、規範と記録を固定する」。データ点は無い。</desc>
 <rect x="0" y="0" width="680" height="432" fill="#FFFFFF"/>
 <rect x="96.0" y="56.0" width="272.0" height="150.0" fill="#FAFAFA"/>
@@ -1276,7 +1285,7 @@ p.lit-summary { max-width: var(--measure); margin: 0 0 var(--space-3); }
 <h3>8.4 ウェイファインディングの中の投射 ―― 読みの提案</h3>
 <p>では、ウェイファインディングの中には、どのような投射の姿を読み取ることができるか。本節は、6.5 で述べたとおり、資料で確かめた所見ではなく、公刊資料に基づく読みの提案である。投射の構造を構成する3つの要素ごとに、本稿が依拠した資料と、その資料の性質、そして対抗する読みである認識主導型意思決定（Klein 1998）との違いを表6に示す。</p>
 <p class="lit-tcap"><span class="num">表6</span><span class="head">ミクロな投射の3要素と、本稿が依拠した資料</span></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="表（横にスクロールできます）"><table>
 <thead>
 <tr>
 <th>要素</th>

@@ -40,7 +40,7 @@ main table td[align="right"], main table th[align="right"] { font-variant-numeri
 
 /* 3周目（2026-10-16・design-quality-auditor 2周目の差し戻しを反映）。SVG ファイルは変えず、inline 側の表示だけを CSS で整える。 */
 /* 図2: 主役（象限名）を軸ラベルより強く。図1: 段の見出しは黒、赤は罫と矢印（figc 固定仕様）だけに留める */
-.lit-fig-wide svg text[fill="#6B6B6B"] { fill: #3A3A3A; font-weight: 700; font-size: 12.5px; }
+.lit-fig-wide svg text[fill="#6B6B6B"] { fill: #3A3A3A; font-weight: 700; }
 .lit-fig-wide svg text[fill="#3A3A3A"] { fill: #6B6B6B; font-size: 12px; }
 .lit-fig-narrow svg text[fill="#CC1400"] { fill: #1A1A1A; }
 
