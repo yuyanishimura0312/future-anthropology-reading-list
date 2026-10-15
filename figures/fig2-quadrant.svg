@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 432" font-family='Noto Sans JP, "Hiragino Sans", -apple-system, sans-serif' role="img" aria-label="fig2-quadrant">
+<rect x="0" y="0" width="680" height="432" fill="#FFFFFF"/>
+<text x="16.0" y="30.0" font-size="14" font-weight="700" letter-spacing="-0.01em" text-anchor="start" fill="#0E0E0E"></text>
+
+<rect x="96.0" y="56.0" width="272.0" height="150.0" fill="#FAFAFA"/>
+<rect x="368.0" y="56.0" width="272.0" height="150.0" fill="#FAFAFA"/>
+<rect x="96.0" y="206.0" width="272.0" height="150.0" fill="#FAFAFA"/>
+<rect x="368.0" y="206.0" width="272.0" height="150.0" fill="#FAFAFA"/>
+
+<text x="104.0" y="74.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="start" fill="#6B6B6B">残った由来の価値が、許可の枠の内側に置かれる</text>
+<text x="632.0" y="74.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="end" fill="#6B6B6B">由来の核と分散した手段が結び合う</text>
+<text x="104.0" y="336.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="start" fill="#6B6B6B">一本化された手段が、規範と記録を固定する</text>
+<text x="632.0" y="336.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="end" fill="#6B6B6B">分散した手段が、価格による置き換えを速める</text>
+
+<line x1="368.0" y1="56" x2="368.0" y2="356" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3,3"/>
+<line x1="96" y1="206.0" x2="640" y2="206.0" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3,3"/>
+<rect x="96" y="56" width="544" height="300" fill="none" stroke="#E6E6E6" stroke-width="1"/>
+<text x="368.0" y="396.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="middle" fill="#3A3A3A">統制外の手段が統制を崩す力（弱 → 強）</text>
+<text x="28.0" y="206.0" font-size="11" font-weight="400" letter-spacing="0.02em" text-anchor="middle" fill="#3A3A3A" transform="rotate(-90 28.0 206.0)">由来の価値が残る力（弱 → 強）</text>
+
+
+</svg>

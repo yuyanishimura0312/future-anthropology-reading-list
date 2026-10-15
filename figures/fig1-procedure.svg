@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 880" font-family='Noto Sans JP, "Hiragino Sans", -apple-system, sans-serif' role="img" aria-label="fig1-procedure">
+<rect x="0" y="0" width="360" height="880" fill="#FFFFFF"/>
+<rect x="16" y="48" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="48" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="74.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">シグナル収集</text>
+<text x="28.0" y="110.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">11,127件</text>
+
+<line x1="180.0" y1="132.0" x2="180.0" y2="154.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,154.0 177.0,147.7 183.0,147.7" fill="#CC1400"/>
+
+<rect x="16" y="160" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="160" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="186.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">因果階層分析</text>
+<text x="28.0" y="222.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">4層（表層から世界観・神話の層まで）</text>
+
+<line x1="180.0" y1="244.0" x2="180.0" y2="266.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,266.0 177.0,259.7 183.0,259.7" fill="#CC1400"/>
+
+<rect x="16" y="272" width="328" height="144" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="272" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="298.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">AI革命の5つの重なり</text>
+<text x="28.0" y="334.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">労働の変容</text>
+<text x="28.0" y="350.9" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">計算と知能の分散</text>
+<text x="28.0" y="367.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">情報の生成</text>
+<text x="28.0" y="383.9" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">異なるものとの接触</text>
+<text x="28.0" y="400.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">根本的な問いの再来</text>
+
+<line x1="180.0" y1="420.0" x2="180.0" y2="442.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,442.0 177.0,435.7 183.0,435.7" fill="#CC1400"/>
+
+<rect x="16" y="448" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="448" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="474.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">5革命の遷移の書き起こし</text>
+<text x="28.0" y="510.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">381件（before／after と理由）</text>
+
+<line x1="180.0" y1="532.0" x2="180.0" y2="554.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,554.0 177.0,547.7 183.0,547.7" fill="#CC1400"/>
+
+<rect x="16" y="560" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="560" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="586.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">仕組みの束</text>
+<text x="28.0" y="622.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">71束</text>
+
+<line x1="180.0" y1="644.0" x2="180.0" y2="666.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,666.0 177.0,659.7 183.0,659.7" fill="#CC1400"/>
+
+<rect x="16" y="672" width="328" height="80" fill="#FAFAFA" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="672" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="698.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#CC1400">束どうしの相互作用</text>
+<text x="28.0" y="734.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">451本（強め合う／打ち消す／必要条件）</text>
+
+<line x1="180.0" y1="756.0" x2="180.0" y2="778.0" stroke="#CC1400" stroke-width="2"/>
+<polygon points="180.0,778.0 177.0,771.7 183.0,771.7" fill="#CC1400"/>
+
+<rect x="16" y="784" width="328" height="80" fill="#F6E1DE" stroke="#E6E6E6" stroke-width="1"/>
+<rect x="16" y="784" width="328" height="2" fill="#CC1400"/>
+<text x="28.0" y="810.5" font-size="12.5" font-weight="700" letter-spacing="0" text-anchor="start" fill="#9A0F00">2軸4象限の分岐</text>
+<text x="28.0" y="846.4" font-size="11" font-weight="400" letter-spacing="0" text-anchor="start" fill="#3A3A3A">由来の価値 × 統制外の手段</text>
+
+</svg>

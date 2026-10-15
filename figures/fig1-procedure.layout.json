@@ -1,0 +1,356 @@
+{
+  "id": "fig1-procedure",
+  "type": "flow",
+  "size": "xs",
+  "canvas": {
+    "w": 360,
+    "h": 880
+  },
+  "elements": [
+    {
+      "ref": "s1",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 48,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "シグナル収集",
+          "x": 28,
+          "y": 74.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "11,127件",
+          "x": 28,
+          "y": 110.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr0",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 132,
+      "x2": 180,
+      "y2": 154,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s2",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 160,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "因果階層分析",
+          "x": 28,
+          "y": 186.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "4層（表層から世界観・神話の層まで）",
+          "x": 28,
+          "y": 222.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr1",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 244,
+      "x2": 180,
+      "y2": 266,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s3",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 272,
+        "w": 328,
+        "h": 144
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "AI革命の5つの重なり",
+          "x": 28,
+          "y": 298.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "労働の変容",
+          "x": 28,
+          "y": 334.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        },
+        {
+          "text": "計算と知能の分散",
+          "x": 28,
+          "y": 350.875,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        },
+        {
+          "text": "情報の生成",
+          "x": 28,
+          "y": 367.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        },
+        {
+          "text": "異なるものとの接触",
+          "x": 28,
+          "y": 383.875,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        },
+        {
+          "text": "根本的な問いの再来",
+          "x": 28,
+          "y": 400.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr2",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 420,
+      "x2": 180,
+      "y2": 442,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s4",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 448,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "5革命の遷移の書き起こし",
+          "x": 28,
+          "y": 474.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "381件（before／after と理由）",
+          "x": 28,
+          "y": 510.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr3",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 532,
+      "x2": 180,
+      "y2": 554,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s5",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 560,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "仕組みの束",
+          "x": 28,
+          "y": 586.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "71束",
+          "x": 28,
+          "y": 622.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr4",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 644,
+      "x2": 180,
+      "y2": 666,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s6",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 672,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "surface",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "束どうしの相互作用",
+          "x": 28,
+          "y": 698.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "451本（強め合う／打ち消す／必要条件）",
+          "x": 28,
+          "y": 734.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    },
+    {
+      "ref": "arr5",
+      "kind": "arrow",
+      "x1": 180,
+      "y1": 756,
+      "x2": 180,
+      "y2": 778,
+      "token": "accent",
+      "lines": []
+    },
+    {
+      "ref": "s7",
+      "kind": "flow-stage",
+      "box": {
+        "x": 16,
+        "y": 784,
+        "w": 328,
+        "h": 80
+      },
+      "fill": "accent-tint",
+      "stroke": "rule",
+      "accentTop": true,
+      "lines": [
+        {
+          "text": "2軸4象限の分岐",
+          "x": 28,
+          "y": 810.5,
+          "role": "fig-heading",
+          "size": "xs",
+          "token": "accent-deep",
+          "anchor": "start",
+          "maxWidth": 308
+        },
+        {
+          "text": "由来の価値 × 統制外の手段",
+          "x": 28,
+          "y": 846.375,
+          "role": "fig-body",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "start",
+          "maxWidth": 304
+        }
+      ]
+    }
+  ]
+}

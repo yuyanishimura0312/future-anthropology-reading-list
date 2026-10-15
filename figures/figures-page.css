@@ -1,0 +1,49 @@
+/* 図表（論考タブ・2026-10-16 追加／2026-10-16 2周目で改訂）: figure / figcaption / table / 表番号。
+   値は :root のトークン（--accent / --ink-* / --rule / --space-* / --font-sans / --font-mono）を参照し、独自 hex を置かない。
+   図は figc が出した inline SVG（viewBox 付き・色は tokens.json 由来の hex）。
+   ★実効文字サイズの規律: figc の文字は viewBox 単位で 11〜12.5（size xs）。表示幅が viewBox 幅を下回ると縮むので、
+     図1（viewBox 360）は本文幅の中央に 360〜420px で置き、図2（viewBox 680・quadrant ソルバは xs 幅を持たない）は
+     本文の可読幅（--measure）を抜けて 680px まで広げる（1周目の採点で 8.3px まで縮んでいた）。印刷では figure を分割しない。 */
+.lit-essay .lit-fig { margin: var(--space-4) 0; padding: 0; break-inside: avoid; page-break-inside: avoid; }
+.lit-essay .lit-fig > svg { display: block; width: 100%; height: auto; }
+/* 縦長の図（図1）: 幅を抑えて中央に置き、縮尺を 1.0〜1.17 に保つ */
+.lit-essay .lit-fig-narrow > svg { max-width: 420px; margin: 0 auto; }
+/* 横長の図（図2）: 可読幅を抜けて viewBox 幅まで広げる（縮尺 1.0）。画面が狭ければ画面幅いっぱいで止める */
+.lit-essay .lit-fig-wide > svg { width: 680px; max-width: calc(100vw - 2 * var(--side)); margin-left: calc((100% - min(680px, 100vw - 2 * var(--side))) / 2); }
+.lit-essay .lit-fig figcaption {
+  font-family: var(--font-sans); font-size: var(--fs-caption, 13px); line-height: 1.7; font-weight: 400;
+  color: var(--ink-soft); text-indent: 0; margin: var(--space-1) 0 0;
+}
+.lit-essay .lit-fig figcaption .num { color: var(--accent); font-weight: 700; margin-right: .75em; letter-spacing: .04em; }
+.lit-essay .lit-fig figcaption .head { font-weight: 700; color: var(--ink-strong); }
+/* 表: 番号つきの表は figcaption を表の上に置く（学術論文の慣行）。図は下 */
+.lit-essay .lit-fig-table figcaption { margin: 0 0 var(--space-1); }
+.lit-essay .lit-table { width: 100%; border-collapse: collapse; font-size: var(--fs-caption, 13px); line-height: 1.6; font-family: var(--font-sans); }
+.lit-essay .lit-table th {
+  font-size: var(--fs-label, 12px); font-weight: 700; letter-spacing: .06em; color: var(--ink-mute); text-align: left;
+  padding: 6px 10px 8px; border-top: 2px solid var(--ink-strong); border-bottom: 1px solid var(--ink-strong);
+}
+.lit-essay .lit-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; text-indent: 0; }
+.lit-essay .lit-table th.c, .lit-essay .lit-table td.c { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lit-essay .lit-table td.c { font-family: var(--font-mono); font-size: var(--fs-caption, 13px); }
+/* 期間の列: 和文を含むので本文ゴシック・左揃え・折り返さない（「頃」は見出しに寄せた） */
+.lit-essay .lit-table th.p, .lit-essay .lit-table td.p { text-align: left; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lit-essay .lit-table tfoot td { border-top: 1px solid var(--ink-strong); border-bottom: 2px solid var(--ink-strong); font-weight: 700; }
+.lit-essay .lit-fig-note { font-size: var(--fs-label, 12px); line-height: 1.7; color: var(--ink-mute); text-indent: 0; margin: var(--space-1) 0 0; }
+@media (max-width: 640px) {
+  .lit-essay .lit-table th, .lit-essay .lit-table td { padding: 6px 6px; }
+  .lit-essay .lit-table th:nth-child(2) { white-space: normal; }  /* 折るのは革命名の見出し。数値と期間は折らない */
+  .lit-essay .lit-fig-wide > svg { width: 100%; max-width: none; margin-left: 0; }
+}
+@media print {
+  .lit-essay .lit-fig { break-inside: avoid; page-break-inside: avoid; }
+  .lit-essay .lit-fig-wide > svg { width: 100%; max-width: 100%; margin-left: 0; }
+  .lit-essay .lit-fig > svg { max-height: 240mm; }
+  .lit-essay .lit-table tr { break-inside: avoid; }
+}
+
+/* 本文 md の markdown 表（表1〜6）にも同じ罫組みを当てる。表番号・題は md 側の段落（直前の <p>）が持つ */
+.lit-essay article table:not(.lit-reftable), .lit-essay > table:not(.lit-reftable) { width: 100%; border-collapse: collapse; font-size: var(--fs-caption, 13px); line-height: 1.6; font-family: var(--font-sans); margin: var(--space-2) 0 var(--space-4); }
+.lit-essay table:not(.lit-reftable) th { font-size: var(--fs-label, 12px); font-weight: 700; letter-spacing: .06em; color: var(--ink-mute); text-align: left; padding: 6px 10px 8px; border-top: 2px solid var(--ink-strong); border-bottom: 1px solid var(--ink-strong); }
+.lit-essay table:not(.lit-reftable) td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; text-indent: 0; }
+.lit-essay table:not(.lit-reftable) td[align="right"], .lit-essay table:not(.lit-reftable) th[align="right"] { font-variant-numeric: tabular-nums; white-space: nowrap; }

@@ -1,0 +1,47 @@
+{
+  "figc": "1",
+  "id": "fig2-quadrant",
+  "type": "quadrant",
+  "size": "xs",
+  "spec": {
+    "axes": {
+      "x": {
+        "label": "統制外の手段が統制を崩す力（弱 → 強）",
+        "domain": [
+          0,
+          1
+        ],
+        "split": 0.5,
+        "ticks": []
+      },
+      "y": {
+        "label": "由来の価値が残る力（弱 → 強）",
+        "domain": [
+          0,
+          1
+        ],
+        "split": 0.5,
+        "ticks": []
+      }
+    },
+    "quadrant_labels": {
+      "hi_hi": {
+        "title": "由来の核と分散した手段が結び合う",
+        "emphasis": "muted"
+      },
+      "lo_hi": {
+        "title": "残った由来の価値が、許可の枠の内側に置かれる",
+        "emphasis": "muted"
+      },
+      "hi_lo": {
+        "title": "分散した手段が、価格による置き換えを速める",
+        "emphasis": "muted"
+      },
+      "lo_lo": {
+        "title": "一本化された手段が、規範と記録を固定する",
+        "emphasis": "muted"
+      }
+    },
+    "points": []
+  }
+}

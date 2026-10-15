@@ -1,0 +1,1 @@
+{"cmd":"verify","status":"PASS","checks":[{"name":"grid_8pt","pass":true},{"name":"overlap","pass":true},{"name":"text_fit","pass":true},{"name":"canvas_fit","pass":true},{"name":"box_contain","pass":true},{"name":"token_only","pass":true},{"name":"font_gothic","pass":true}],"violations":[]}

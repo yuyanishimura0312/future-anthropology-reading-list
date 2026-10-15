@@ -1,0 +1,165 @@
+{
+  "id": "fig2-quadrant",
+  "type": "quadrant",
+  "size": "xs",
+  "canvas": {
+    "w": 680,
+    "h": 432
+  },
+  "elements": [
+    {
+      "ref": "__title__",
+      "kind": "title",
+      "lines": [
+        {
+          "text": "",
+          "x": 16,
+          "y": 30,
+          "role": "fig-title",
+          "size": "xs",
+          "token": "ink-strong",
+          "anchor": "start",
+          "maxWidth": 648
+        }
+      ]
+    },
+    {
+      "ref": "__quads__",
+      "kind": "quad-bg",
+      "rects": [
+        {
+          "x": 96,
+          "y": 56,
+          "w": 272,
+          "h": 150,
+          "key": "lo_hi",
+          "token": "surface",
+          "op": 1,
+          "subInk": "ink-mute"
+        },
+        {
+          "x": 368,
+          "y": 56,
+          "w": 272,
+          "h": 150,
+          "key": "hi_hi",
+          "token": "surface",
+          "op": 1,
+          "subInk": "ink-mute"
+        },
+        {
+          "x": 96,
+          "y": 206,
+          "w": 272,
+          "h": 150,
+          "key": "lo_lo",
+          "token": "surface",
+          "op": 1,
+          "subInk": "ink-mute"
+        },
+        {
+          "x": 368,
+          "y": 206,
+          "w": 272,
+          "h": 150,
+          "key": "hi_lo",
+          "token": "surface",
+          "op": 1,
+          "subInk": "ink-mute"
+        }
+      ],
+      "lines": []
+    },
+    {
+      "ref": "__quadlabels__",
+      "kind": "note",
+      "lines": [
+        {
+          "text": "残った由来の価値が、許可の枠の内側に置かれる",
+          "x": 104,
+          "y": 74,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-mute",
+          "anchor": "start",
+          "maxWidth": 256
+        },
+        {
+          "text": "由来の核と分散した手段が結び合う",
+          "x": 632,
+          "y": 74,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-mute",
+          "anchor": "end",
+          "maxWidth": 256
+        },
+        {
+          "text": "一本化された手段が、規範と記録を固定する",
+          "x": 104,
+          "y": 336,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-mute",
+          "anchor": "start",
+          "maxWidth": 256
+        },
+        {
+          "text": "分散した手段が、価格による置き換えを速める",
+          "x": 632,
+          "y": 336,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-mute",
+          "anchor": "end",
+          "maxWidth": 256
+        }
+      ]
+    },
+    {
+      "ref": "__axes__",
+      "kind": "axes",
+      "frame": {
+        "x": 96,
+        "y": 56,
+        "w": 544,
+        "h": 300
+      },
+      "split": {
+        "x": 368,
+        "y": 206
+      },
+      "ticks": [],
+      "token": "rule",
+      "lines": [
+        {
+          "text": "統制外の手段が統制を崩す力（弱 → 強）",
+          "x": 368,
+          "y": 396,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "middle",
+          "maxWidth": 544
+        },
+        {
+          "text": "由来の価値が残る力（弱 → 強）",
+          "x": 28,
+          "y": 206,
+          "role": "fig-note",
+          "size": "xs",
+          "token": "ink-soft",
+          "anchor": "middle",
+          "rotate": -90,
+          "maxWidth": 300
+        }
+      ]
+    },
+    {
+      "ref": "__marks__",
+      "kind": "marks",
+      "dots": [],
+      "lines": []
+    }
+  ]
+}

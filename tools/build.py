@@ -249,6 +249,11 @@ def essay_panel():
     # drop the title line; the panel has its own heading
     md = re.sub(r"^# .*\n", "", md, count=1)
     body = markdown.markdown(md, extensions=["extra"])
+    # 図表: md の <!-- fig:NAME --> を figures/ の figc SVG / HTML 表に置き換える（figures/embed.py が正本）
+    import importlib.util
+    _spec = importlib.util.spec_from_file_location("lit_embed", ROOT / "figures" / "embed.py")
+    _embed = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_embed)
+    body = _embed.inject(body)
     i = body.find("<h2>参考文献</h2>")
     if i > 0:
         j = body.find("<h3>", i)
@@ -260,7 +265,7 @@ def essay_panel():
   <div class="sec-head">
     <div class="eyebrow"><span class="n">03</span>Essay · Draft</div>
     <h2>うしろ側にある未来 ―― 「投射」による未来の人類学の試み</h2>
-    <p class="lead">01・02 の文献を土台に、未来学の批判的な検討と「投射」という概念の提案を論文の形にまとめた草稿である。本文は約2万1千字。草稿は主張の射程と文献の帰属について別系統のモデルによる点検を受け、指摘に沿って修正した。さらに、未来学・時間概念・学問系譜・口承の記憶・伝統知識の知識基盤を照会し、出典のある記載で第2・4・6・7章を補強した（付記2）。01・02 の論文は第2章の先行研究（2.1・2.4）に組み込み、ホクレアの航海史と星のコンパスは過去のリサーチとポリネシア航海協会の公開資料で確かめて第7章に加えた。第二研究のフィールドワークとインタビューは未実施で、本文では今後の調査の設計として記している。</p>
+    <p class="lead">01・02 の文献を土台に、未来学の批判的な検討と「投射」という概念の提案を論文の形にまとめた草稿である。本文は約32,000字。研究の問いと方法の章（第6章）を置き、第一研究（AI革命を5つの革命へ投射する分析）を図表とともに報告し、第二研究（ホクレアのウェイファインディング）は公刊資料に基づく読みの提案として示した。主張の射程と文献の帰属は別系統のモデルによる点検を受け、指摘に沿って修正した。第二研究のフィールドワークとインタビューは未実施で、本文では今後の調査の設計として記している。</p>
   </div>
   <article class="lit-essay">
 {body}
@@ -355,6 +360,10 @@ def refs_panel():
   </div>
   <div class="note ink">被引用数は OpenAlex・{DATE} 時点の値。題名と著者で照合できなかったもの（Pels 2015、Appadurai 2004、Inayatullah 1998、Polak 1961、Hartog 2003、Textor 1980、Salazar ほか 2017、Spiller ほか 2015、Glenn &amp; Gordon 2009、Eliade 1949、Lévi-Strauss 1962、Kelly 2016）は「—」とした。「—」は被引用が少ないことを意味しない。書籍と論文の被引用数は数え方の性質が異なるため、並べて比べない。</div>
 {chr(10).join(blocks)}
+  <div class="subhead">入手先（書籍）</div>
+  <ul class="pts">
+    <li>Spiller, Barclay-Kerr &amp; Panoho『Wayfinding Leadership』（2015）—— 出版社（紙版・電子書籍） <a href="https://huia.co.nz/products/wayfinding-leadership-ground-breaking-wisdom-for-developing-leaders">huia.co.nz</a> ／ 音声版 <a href="https://huia.co.nz/products/wayfinding-leadership-audiobook">huia.co.nz</a> ／ 著者の紹介 <a href="https://www.chelliespiller.com/wayfinding-leadership">chelliespiller.com</a> ／ 書評 <a href="https://mentalhealth.org.nz/books/review/wayfinding-leadership-groundbreaking-wisdom-for-developing-leaders">Mental Health Foundation</a>。★本文は有料の書籍で、無料の原文は公開されていない。</li>
+  </ul>
 </section>
 </main>
 </div>
@@ -401,7 +410,9 @@ def main():
 '''
     pc = essay_panel()
     pd = refs_panel()
-    head = head.replace("</style>", ESSAY_CSS + "</style>", 1)
+    # 図表の書式は figures/figures-page.css が正本（論考タブと論文 PDF で figure/table の書式を共有するため別ファイル）
+    fig_css = (ROOT / "figures" / "figures-page.css").read_text(encoding="utf-8")
+    head = head.replace("</style>", ESSAY_CSS + "\n" + fig_css + "</style>", 1)
     body = f'''<body>
 <a class="skip-link" href="#tab-future">本文へスキップ</a>
 <header class="cover lit-nophoto" role="banner">

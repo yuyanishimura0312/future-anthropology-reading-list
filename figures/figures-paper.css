@@ -1,0 +1,39 @@
+/* 論文版 PDF（render_paper.py）用の図表書式。本文は明朝（DB成果物・論文の別canon）だが、
+   図のキャプション・表・表番号はゴシック（Noto Sans JP）。アクセントは #CC1400 のみ。純黒は使わない。
+   render_paper.py の css 文字列の末尾に連結する。
+   ★局所値の注記: ここで使う --ink #1A1A1A / --sub #555 / --rule #BDBDBD / --accent #CC1400 は render_paper.py の :root が
+   持つ論文版面の局所値で、ds/tokens.css の集合と一致するのは --ink と --accent のみ（--sub・--rule は論文の別canon の値）。
+   図（figc SVG）の色は tokens.json 由来で、ここでは触らない。 */
+figure.lit-fig { margin: 5mm 0 6mm; padding: 0; break-inside: avoid; page-break-inside: avoid; }
+figure.lit-fig > svg { display: block; width: 100%; height: auto; max-height: 230mm; }
+/* 図1（viewBox 360・縦長）は本文幅いっぱいに伸ばさず 84mm に抑えて中央へ（1 unit ≈ 0.233mm → 本文 11 unit ≈ 7.3pt） */
+figure.lit-fig-narrow > svg { max-width: 84mm; margin: 0 auto; }
+/* 図2（viewBox 680・横長）は本文幅 160mm いっぱい（1 unit ≈ 0.235mm） */
+figure.lit-fig figcaption {
+  font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; font-size: 8.6pt; line-height: 1.6; font-weight: 400;
+  color: var(--ink); text-indent: 0; text-align: left; margin: 2mm 0 0;
+}
+figure.lit-fig figcaption .num { color: var(--accent); font-weight: 700; margin-right: .75em; letter-spacing: .04em; }
+figure.lit-fig figcaption .head { font-weight: 700; }
+figure.lit-fig-table figcaption { margin: 0 0 2mm; }
+table.lit-table {
+  width: 100%; border-collapse: collapse; font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+  font-size: 8.6pt; line-height: 1.5; letter-spacing: 0;
+}
+table.lit-table th {
+  font-size: 7.8pt; font-weight: 700; letter-spacing: .06em; color: var(--sub); text-align: left;
+  padding: 1.6mm 2.4mm 1.8mm; border-top: 1.2pt solid var(--ink); border-bottom: .6pt solid var(--ink);
+}
+table.lit-table td { padding: 1.8mm 2.4mm; border-bottom: .4pt solid var(--rule); vertical-align: top; text-indent: 0; }
+table.lit-table th.c, table.lit-table td.c { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.lit-table td.c { font-family: "Fira Code", "Menlo", monospace; font-size: 8.2pt; }
+table.lit-table th.p, table.lit-table td.p { text-align: left; white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.lit-table tfoot td { border-top: .6pt solid var(--ink); border-bottom: 1.2pt solid var(--ink); font-weight: 700; }
+table.lit-table tr { break-inside: avoid; }
+p.lit-fig-note { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; font-size: 7.8pt; line-height: 1.6; color: var(--sub); text-indent: 0; text-align: left; margin: 1.5mm 0 0; }
+
+/* 本文 md の markdown 表（表1〜6）。python-markdown が出す素の <table> に同じ罫組みを当てる */
+main table { width: 100%; border-collapse: collapse; font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; font-size: 8.6pt; line-height: 1.5; letter-spacing: 0; margin: 3mm 0 5mm; break-inside: avoid; }
+main table th { font-size: 7.8pt; font-weight: 700; letter-spacing: .06em; color: var(--sub); text-align: left; padding: 1.6mm 2.4mm 1.8mm; border-top: 1.2pt solid var(--ink); border-bottom: .6pt solid var(--ink); }
+main table td { padding: 1.8mm 2.4mm; border-bottom: .4pt solid var(--rule); vertical-align: top; text-indent: 0; }
+main table td[align="right"], main table th[align="right"] { font-variant-numeric: tabular-nums; white-space: nowrap; }
