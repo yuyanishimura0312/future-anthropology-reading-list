@@ -10,3 +10,8 @@
 委譲先: figc ×2 (sonnet), design-quality-auditor (opus) | 表・CSS・embed.py は inline
 採点: 68/100 差し戻し（1周目・2周目は未採点）
 接地: dsdb:なし（preset 未判定） / edd:pattern:なし（medium=report に65件あるが選択根拠に引用なし） / tokens:/Users/nishimura+/projects/research/miratuku-design-system/ds/tokens.css
+
+## 2026-10-16 design gate
+- 採点: 77/100 Good（4周目・design-quality-auditor・opus）。1周目68→2周目66→3周目73→4周目77
+- 接地: dsdb:なし（preset 未判定） / edd:pattern:なし / tokens:~/projects/research/miratuku-design-system/ds/tokens.css
+- 残: 論文版の明朝本文を canon 例外に登録するかは西村さん決裁待ち
