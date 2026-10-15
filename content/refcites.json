@@ -278,5 +278,61 @@
   "cites": null,
   "doi": null,
   "oa_title": null
+ },
+ {
+  "au": "Dator",
+  "title": "Alternative futures at the Manoa School",
+  "cites": 166,
+  "doi": "https://doi.org/10.1007/978-3-030-17387-6_5",
+  "oa_title": "Alternative Futures at the Manoa School"
+ },
+ {
+  "au": "Glenn",
+  "title": "Futures Research Methodology",
+  "cites": null,
+  "doi": null,
+  "oa_title": null
+ },
+ {
+  "au": "Löwith",
+  "title": "Meaning in History",
+  "cites": 590,
+  "doi": "https://doi.org/10.2307/2019738",
+  "oa_title": "Meaning in History. The Theological Implications of the Philosophy of History"
+ },
+ {
+  "au": "Butterfield",
+  "title": "The Whig Interpretation of History",
+  "cites": 1174,
+  "doi": null,
+  "oa_title": "The Whig interpretation of history"
+ },
+ {
+  "au": "Eliade",
+  "title": "The Myth of the Eternal Return",
+  "cites": null,
+  "doi": null,
+  "oa_title": null
+ },
+ {
+  "au": "Lévi-Strauss",
+  "title": "The Savage Mind",
+  "cites": null,
+  "doi": null,
+  "oa_title": null
+ },
+ {
+  "au": "Kelly",
+  "title": "The Memory Code",
+  "cites": null,
+  "doi": null,
+  "oa_title": null
+ },
+ {
+  "au": "Rubin",
+  "title": "Memory in Oral Traditions",
+  "cites": 557,
+  "doi": "https://doi.org/10.1093/oso/9780195082111.001.0001",
+  "oa_title": "Memory In Oral Traditions"
  }
 ]

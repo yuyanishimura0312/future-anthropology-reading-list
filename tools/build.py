@@ -260,7 +260,7 @@ def essay_panel():
   <div class="sec-head">
     <div class="eyebrow"><span class="n">03</span>Essay · Draft</div>
     <h2>うしろ側にある未来 ―― 「投射」による未来の人類学の試み</h2>
-    <p class="lead">01・02 の文献を土台に、未来学の批判的な検討と「投射」という概念の提案を論文の形にまとめた草稿である。本文は約2万1千字。草稿は主張の射程と文献の帰属について別系統のモデルによる点検を受け、指摘に沿って修正した。第二研究のフィールドワークとインタビューは未実施で、本文では今後の調査の設計として記している。</p>
+    <p class="lead">01・02 の文献を土台に、未来学の批判的な検討と「投射」という概念の提案を論文の形にまとめた草稿である。本文は約2万1千字。草稿は主張の射程と文献の帰属について別系統のモデルによる点検を受け、指摘に沿って修正した。さらに、未来学・時間概念・学問系譜・口承の記憶・伝統知識の知識基盤を照会し、出典のある記載で第2・4・6・7章を補強した（付記2）。第二研究のフィールドワークとインタビューは未実施で、本文では今後の調査の設計として記している。</p>
   </div>
   <article class="lit-essay">
 {body}
@@ -287,12 +287,18 @@ REF_GROUPS = [
           ("Ansoff 1975", "Managing strategic surprise by response to weak signals（California Management Review）", "論文", "2.2：弱いシグナル"),
           ("Hiltunen 2008", "The future sign and its three dimensions（Futures）", "論文", "2.2：未来の兆しの3つの次元"),
           ("Inayatullah 1998", "Causal layered analysis: Poststructuralism as method（Futures）", "論文", "2.2・6.2：因果階層分析"),
+          ("Dator 2009", "Alternative futures at the Manoa School（Journal of Futures Studies）", "論文", "2.2：複数の代替未来を対象とする学派"),
+          ("Glenn & Gordon 2009", "Futures Research Methodology", "書籍（方法論集成）", "2.2：因果階層分析の限界"),
           ("Sardar 1993", "Colonizing the future（Futures）", "論文", "2.3：未来学の脱植民地化"),
           ("Wack 1985", "Scenarios: Uncharted waters ahead（Harvard Business Review）", "論文", "7.3：シナリオと経営者の判断")]),
  ("時間論とアクターネットワーク理論", [("Serres & Latour 1995", "Conversations on Science, Culture, and Time", "書籍", "3.1：折り畳まれ浸透する時間"),
+          ("Eliade 1949", "The Myth of the Eternal Return", "書籍", "4.3：永劫回帰と「歴史の恐怖」"),
+          ("Lévi-Strauss 1962", "The Savage Mind", "書籍", "4.3：熱い社会と冷たい社会"),
           ("Latour 1993", "We Have Never Been Modern", "書籍", "3.2：近代の時間の批判"),
           ("Latour 2005", "Reassembling the Social", "書籍", "3.2・3.3：アクターネットワーク理論")]),
- ("歴史学と未来", [("Rostow 1960", "The Stages of Economic Growth", "書籍", "4.1：段階的発展論"),
+ ("歴史学と未来", [("Löwith 1949", "Meaning in History", "書籍", "4.1：進歩史観は終末論の世俗化"),
+          ("Butterfield 1931", "The Whig Interpretation of History", "書籍", "4.1：ホイッグ史観の批判"),
+          ("Rostow 1960", "The Stages of Economic Growth", "書籍", "4.1：段階的発展論"),
           ("Chakrabarty 2000", "Provincializing Europe", "書籍", "4.2：歴史の待合室"),
           ("Popper 1957", "The Poverty of Historicism", "書籍", "4.2：歴史主義批判"),
           ("Koselleck 1985", "Futures Past", "書籍", "4.2：経験の空間と期待の地平"),
@@ -311,6 +317,8 @@ REF_GROUPS = [
           ("Hutchins 1995", "Cognition in the Wild", "書籍", "7.2：分散した認知としての航海"),
           ("Genz ほか 2009", "Wave navigation in the Marshall Islands（Oceanography）", "論文", "7.2：波による航海術の検証"),
           ("Ingold 2000", "The Perception of the Environment", "書籍", "7.2：ナビゲーションとウェイファインディング"),
+          ("Kelly 2016", "The Memory Code", "書籍", "7.4：土地に結びつく記憶"),
+          ("Rubin 1995", "Memory in Oral Traditions", "書籍", "7.4：文字なしの想起を支える形式"),
           ("Spiller, Barclay-Kerr & Panoho 2015", "Wayfinding Leadership", "書籍", "7.5：ウェイファインディングとリーダーシップ")]),
 ]
 
@@ -342,7 +350,7 @@ def refs_panel():
     <h2>論考で新たに用いた文献 {total}件</h2>
     <p class="lead">03 の論考で、01・02 の一覧に加えて用いた論文と書籍である。論考のどの節で何のために使ったかを添えた。01・02 に掲載済みの文献（Robbins、Adams ほか、Munn、Guyer、Ortner、Crapanzano、宮崎 2006、Whyte 2017・2018）は再掲していない。</p>
   </div>
-  <div class="note ink">被引用数は OpenAlex・{DATE} 時点の値。題名と著者で照合できなかったもの（Pels 2015、Appadurai 2004、Inayatullah 1998、Polak 1961、Hartog 2003、Textor 1980、Salazar ほか 2017、Spiller ほか 2015）は「—」とした。「—」は被引用が少ないことを意味しない。書籍と論文の被引用数は数え方の性質が異なるため、並べて比べない。</div>
+  <div class="note ink">被引用数は OpenAlex・{DATE} 時点の値。題名と著者で照合できなかったもの（Pels 2015、Appadurai 2004、Inayatullah 1998、Polak 1961、Hartog 2003、Textor 1980、Salazar ほか 2017、Spiller ほか 2015、Glenn &amp; Gordon 2009、Eliade 1949、Lévi-Strauss 1962、Kelly 2016）は「—」とした。「—」は被引用が少ないことを意味しない。書籍と論文の被引用数は数え方の性質が異なるため、並べて比べない。</div>
 {chr(10).join(blocks)}
 </section>
 </main>
